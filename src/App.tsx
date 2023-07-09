@@ -10,7 +10,7 @@ const App = () => {
       <Header />
       <div className="container">
         <Breadcrumb />
-        <main style={{ minHeight: "90vh" }}>
+        <main style={{ minHeight: "90vh" }} className="ui">
           <Router />
         </main>
         <Footer />

@@ -5,6 +5,9 @@
 .input-section {
   position: relative;
 }
+.chart-button {
+  margin: 2px !important;
+}
 .search-pop-up {
   top: 2.3rem;
   position: absolute;
@@ -99,4 +102,13 @@
 .drop-down-menu {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: 3px; /* Firefox */
+}
+
+.modal-header {
+  display: flex !important;
+  justify-content: space-between;
+}
+
+.modal-header i {
+  cursor: pointer;
 }

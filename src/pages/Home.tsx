@@ -7,8 +7,10 @@ import {
   Card,
   Dropdown,
   Grid,
+  Icon,
   Image,
   Menu,
+  Modal,
   Segment,
 } from "semantic-ui-react";
 import { getAllAlphabets } from "utils/getAllAlphabets";
@@ -16,16 +18,17 @@ import { getAllAlphabets } from "utils/getAllAlphabets";
 import { SkeletonSection } from "components/home/SkeletonSection";
 import { useDispatch } from "react-redux";
 import { updateSelectedDrink } from "redux/selectedDrink";
-import { ToggleListAndChart } from "components/home/ToggleListAndChart";
+
+import { ChartModalContent } from "components/home/ChartModalContent";
 
 export type FetchDrinkQueryProps = Pick<
   ReturnType<typeof useFetchDrinkQuery>,
-  "data" | "isLoading" | "error"
+  "data" | "isLoading" | "isError"
 >;
 
 export const Home = () => {
   const alphabets = useMemo(() => getAllAlphabets(), []);
-
+  const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
 
   const [query, setQuery] = useState({
@@ -73,8 +76,39 @@ export const Home = () => {
             ))}
           </Dropdown.Menu>
         </Dropdown>
-        <ToggleListAndChart />
-
+        <Modal
+          onClose={() => setOpen(false)}
+          onOpen={() => setOpen(true)}
+          open={open}
+          trigger={
+            <Button
+              icon
+              labelPosition="left"
+              className="chart-button"
+              disabled={!data || !data?.drinks}
+            >
+              <Icon name="chart pie" />
+              Show charts
+            </Button>
+          }
+        >
+          <Modal.Header className="modal-header">
+            <span>Charts</span>
+            <i
+              className="close icon"
+              onClick={() => {
+                setOpen(false);
+              }}
+            />
+          </Modal.Header>
+          <Modal.Content>
+            {!data || !data?.drinks ? (
+              <div>Chart data is not available</div>
+            ) : (
+              <ChartModalContent data={data.drinks} />
+            )}
+          </Modal.Content>
+        </Modal>
         <Menu.Menu position="right">
           <div className="ui right aligned category search item">
             <div className="input-section">
@@ -153,7 +187,7 @@ export const Home = () => {
                       dispatch(updateSelectedDrink({ selectedDrink: drink }));
                     }}
                   >
-                    <Card>
+                    <Card link>
                       <Image src={strDrinkThumb} wrapped ui={false} />
                       <Card.Content>
                         <Card.Header>{strDrink}</Card.Header>

@@ -24,3 +24,7 @@ export type DrinkProps = {
   strDrinkThumb: string;
 } & DrinkIngredientProps &
   DrinkMeasureProps;
+
+export type ChartProps = {
+  data: string[];
+};
