@@ -1,0 +1,56 @@
+$themes: (
+  bgThemeColor: (
+    darkTheme: var(--blue700),
+    lightTheme: var(--grey100),
+  ),
+  textThemeColor: (
+    darkTheme: var(--grey100),
+    lightTheme: var(--grey800),
+  ),
+  hoverTextThemeColor: (
+    darkTheme: var(--grey200),
+    lightTheme: var(--grey900),
+  ),
+  hoverPopupBgColor: (
+    darkTheme: var(--grey800),
+    lightTheme: var(--grey200),
+  ),
+  gridBgColor: (
+    darkTheme: var(--blue800),
+    lightTheme: var(--grey100),
+  ),
+  gridItemBgColor: (
+    darkTheme: var(--blue600),
+    lightTheme: var(--grey100),
+  ),
+  gridItemSpanColor: (
+    darkTheme: var(--red100),
+    lightTheme: var(--red800),
+  ),
+  hoverGridItemSpanColor: (
+    darkTheme: var(--red200),
+    lightTheme: var(--red900),
+  ),
+  gridContentBorderColor: (
+    darkTheme: var(--grey400),
+    lightTheme: var(--grey200),
+  ),
+);
+
+@mixin styles($mode) {
+  @each $key, $map in $themes {
+    @each $prop, $color in $map {
+      @if $prop == $mode {
+        --#{$key}: #{$color};
+      }
+    }
+  }
+}
+
+.dark-mode {
+  @include styles("darkTheme");
+}
+
+.light-mode {
+  @include styles("lightTheme");
+}

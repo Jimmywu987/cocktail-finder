@@ -1,13 +1,22 @@
-import { Navbar } from "components/common/Navbar";
+import { Footer } from "components/common/Footer";
+import { Header } from "components/common/Header";
+
+import { Breadcrumb } from "components/common/Breadcrumb";
 import { Router } from "routes/Router";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <Navbar />
-      <Router />
-    </>
+    <div className="screen">
+      <Header />
+      <div className="container">
+        <Breadcrumb />
+        <main style={{ minHeight: "90vh" }}>
+          <Router />
+        </main>
+        <Footer />
+      </div>
+    </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,8 @@
+.sidebar {
+  @include dark-mode;
+  @include padding-y(1rem);
+
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}

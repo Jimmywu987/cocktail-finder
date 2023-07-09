@@ -1,13 +1,16 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import "base/light-dark-theme";
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@import "base/mixins";
+@import "base/variables";
+@import "base/common";
+
+@import "components/common/breadcrumb";
+@import "components/common/sidebar";
+@import "components/common/buttons/themeBtn";
+@import "components/common/nav";
+@import "components/common/footer";
+
+@import "components/home/gridSkeleton";
+
+@import "pages/home";
+@import "pages/drinkDetails";

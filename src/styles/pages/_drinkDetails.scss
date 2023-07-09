@@ -1,0 +1,49 @@
+.drink-detail-section {
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.drink-detail-grid {
+  width: 80%;
+  @include devices(md) {
+    width: 90% !important;
+  }
+  @include shadow-xl;
+}
+
+.drink-name {
+  margin: 0 0 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.drink-name h1 {
+  padding: 0;
+  margin: 0;
+}
+.drink-name span {
+  margin: 0 0.5rem;
+  font-size: large;
+}
+.drink-info {
+  margin: 0.5rem 0;
+}
+.drink-info h2 {
+  margin: 0.5rem 0;
+  padding: 0;
+  font-size: large;
+}
+
+.drink-info p {
+  margin: 0 1rem;
+
+  font-size: medium;
+}
+
+.ingredient-table td,
+.ingredient-table th {
+  background-color: var(--gridItemBgColor) !important;
+  color: var(--textThemeColor) !important;
+  border-color: var(--gridContentBorderColor) !important;
+}

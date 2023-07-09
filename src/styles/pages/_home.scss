@@ -1,0 +1,100 @@
+.home {
+}
+
+.search-section {
+  display: flex;
+  justify-content: space-between;
+}
+.input-section {
+  position: relative;
+}
+.search-pop-up {
+  top: 2.3rem;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width: 100%;
+  overflow-y: scroll;
+  background-color: var(--bgThemeColor);
+  @include shadow-xl;
+  z-index: 10;
+}
+.search-pop-up a {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  color: var(--textThemeColor) !important;
+}
+.search-pop-up a:hover {
+  background-color: var(--hoverPopupBgColor);
+}
+
+.fetch-data-error-text {
+  color: #ef4444;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  @include margin-y(20px);
+}
+.no-found-text {
+  width: 100%;
+  text-align: center;
+  @include margin-y(20px);
+}
+
+.error-text {
+  position: absolute !important;
+  z-index: 10;
+}
+.search-pop-up::-webkit-scrollbar,
+.drop-down-menu::-webkit-scrollbar {
+  width: 3px;
+}
+
+.drink-render-section {
+  background-color: var(--gridBgColor) !important;
+}
+.grid-item {
+  display: flex !important;
+  justify-content: center;
+}
+.grid-item div.content {
+  background-color: var(--gridItemBgColor) !important;
+  color: var(--textThemeColor) !important;
+  border-color: var(--gridContentBorderColor) !important;
+}
+.grid-item div.meta,
+.grid-item div.header {
+  color: var(--textThemeColor) !important;
+}
+.drink-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 40px;
+  color: var(--textThemeColor) !important;
+}
+.grid-item a {
+  width: 100% !important;
+  margin: 0 auto;
+  @include devices(md) {
+    width: 90% !important;
+  }
+}
+
+.grid-item a span {
+  color: var(--gridItemSpanColor) !important;
+}
+.grid-item a:hover span {
+  color: var(--hoverGridItemSpanColor) !important;
+  font-weight: 700;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.search-pop-up,
+.drop-down-menu {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: 3px; /* Firefox */
+}

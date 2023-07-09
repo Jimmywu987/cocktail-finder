@@ -1,0 +1,20 @@
+.breadcrumb {
+  display: flex !important;
+  align-items: center;
+}
+
+.breadcrumb a {
+  color: var(--textThemeColor);
+  margin: 1rem 0;
+  &:hover {
+    color: var(--hoverTextThemeColor);
+  }
+}
+
+.breadcrumb div {
+  color: var(--textThemeColor);
+  font-weight: 600;
+}
+.breadcrumb span {
+  @include margin-x(0.5rem);
+}

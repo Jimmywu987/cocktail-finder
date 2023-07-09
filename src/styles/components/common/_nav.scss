@@ -1,0 +1,28 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+.navbar a {
+  text-decoration: none;
+  color: var(--textThemeColor);
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+.navbar .hamburger {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+
+  @include devices(sm) {
+    display: block;
+  }
+}
+
+.navbar .nav-items {
+  display: flex;
+  align-items: center;
+  @include devices(sm) {
+    display: none;
+  }
+}

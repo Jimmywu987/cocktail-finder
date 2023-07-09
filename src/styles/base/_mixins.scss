@@ -1,0 +1,72 @@
+// mixin for media-queries
+@mixin dimension($width: auto, $height: auto) {
+  width: $width;
+  height: $height;
+}
+
+@mixin centered {
+  display: grid;
+  place-items: center;
+}
+
+@mixin mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin margin-x($margin) {
+  margin-left: $margin;
+  margin-right: $margin;
+}
+
+@mixin margin-y($margin) {
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
+
+@mixin padding-x($padding) {
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+@mixin padding-y($padding) {
+  padding-top: $padding;
+  padding-bottom: $padding;
+}
+@mixin dark-mode {
+  background-color: var(--bgThemeColor);
+  color: var(--textThemeColor);
+  transition: background-color 0.5s ease;
+}
+
+@mixin shadow {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+@mixin shadow-xl {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+@mixin devices($breakpoint) {
+  @if $breakpoint==xl {
+    @media (max-width: 1399.98px) {
+      @content;
+    }
+  } @else if $breakpoint==lg {
+    @media (max-width: 1023.98px) {
+      @content;
+    }
+  } @else if $breakpoint==md {
+    @media (max-width: 767.98px) {
+      @content;
+    }
+  } @else if $breakpoint==sm {
+    @media (max-width: 639.98px) {
+      @content;
+    }
+  } @else if $breakpoint==xs {
+    @media (max-width: 479.98px) {
+      @content;
+    }
+  }
+}
