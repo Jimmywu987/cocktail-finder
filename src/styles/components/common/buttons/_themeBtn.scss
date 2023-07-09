@@ -3,11 +3,13 @@
   font-weight: 400;
   display: flex;
   align-items: center;
-  flex-direction: column;
+
   margin: 0;
   cursor: pointer;
 }
 
-.theme-btn label span {
+.theme-btn span {
   color: var(--textThemeColor);
+  font-size: small;
+  margin: 0 0 0 0.5rem;
 }

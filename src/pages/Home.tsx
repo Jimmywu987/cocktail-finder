@@ -1,24 +1,22 @@
 import { useFetchDrinkQuery } from "apis/api";
 
 import { useMemo, useState } from "react";
-import { useQueryClient } from "react-query";
-import { DrinkProps } from "types";
-import { getAllAlphabets } from "utils/getAllAlphabets";
+import { NavLink } from "react-router-dom";
 import {
+  Button,
   Card,
   Dropdown,
-  Icon,
+  Grid,
+  Image,
   Menu,
   Segment,
-  Image,
-  Grid,
 } from "semantic-ui-react";
-import { NavLink } from "react-router-dom";
+import { getAllAlphabets } from "utils/getAllAlphabets";
 
-import Skeleton from "react-loading-skeleton";
 import { SkeletonSection } from "components/home/SkeletonSection";
 import { useDispatch } from "react-redux";
 import { updateSelectedDrink } from "redux/selectedDrink";
+import { ToggleListAndChart } from "components/home/ToggleListAndChart";
 
 export type FetchDrinkQueryProps = Pick<
   ReturnType<typeof useFetchDrinkQuery>,
@@ -75,6 +73,7 @@ export const Home = () => {
             ))}
           </Dropdown.Menu>
         </Dropdown>
+        <ToggleListAndChart />
 
         <Menu.Menu position="right">
           <div className="ui right aligned category search item">

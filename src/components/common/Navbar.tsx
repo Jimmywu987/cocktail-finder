@@ -1,10 +1,10 @@
-import { Icon } from "semantic-ui-react";
-import { NavLink, useLocation } from "react-router-dom";
 import { ToggleDarkModeButton } from "components/common/buttons/ToggleDarkModeButton";
+import { NavLink } from "react-router-dom";
+import { Icon } from "semantic-ui-react";
 
-interface NavbarProps {
+type NavbarProps = {
   toggleDrawer: () => void;
-}
+};
 
 export const Navbar = ({ toggleDrawer }: NavbarProps) => {
   return (

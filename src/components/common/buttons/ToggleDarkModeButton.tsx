@@ -1,19 +1,13 @@
+import { Radio } from "semantic-ui-react";
 import useDarkMode from "use-dark-mode";
 
 export const ToggleDarkModeButton = () => {
   const darkMode = useDarkMode();
 
   return (
-    <div className="ui toggle checkbox theme-btn">
-      <input
-        type="checkbox"
-        onClick={darkMode.toggle}
-        checked={darkMode.value}
-      />
-
-      <label>
-        <span>{darkMode.value ? "Dark mode" : "Light mode"}</span>
-      </label>
+    <div className="theme-btn">
+      <Radio toggle onClick={darkMode.toggle} checked={darkMode.value} />
+      <span>{darkMode.value ? "Dark mode" : "Light mode"}</span>
     </div>
   );
 };
