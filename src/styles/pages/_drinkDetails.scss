@@ -3,7 +3,9 @@
   display: flex;
   justify-content: center;
 }
-
+.drink-detail-section img {
+  border-radius: 0.25rem;
+}
 .drink-detail-grid {
   width: 80%;
   @include devices(md) {

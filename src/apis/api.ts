@@ -1,11 +1,6 @@
-import {
-  useMutation,
-  UseMutationOptions,
-  useQuery,
-  UseQueryOptions,
-} from "react-query";
 import { req } from "apis/https";
 import { HttpMethodEnums } from "enums/HttpMethodEnums";
+import { useQuery, UseQueryOptions } from "react-query";
 import { DrinkProps } from "types";
 
 const fetcher = async (url: string, params?: unknown) => {
@@ -28,7 +23,7 @@ export const useFetchDrinkQuery = (
   useQuery<{
     drinks: DrinkProps[];
   }>(
-    ["alphabet-drink", variable],
+    ["drinks", variable],
     async () => {
       return await fetcher(
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?${variable}`
@@ -36,157 +31,3 @@ export const useFetchDrinkQuery = (
     },
     options
   );
-// export const useCreateClassTypeMutation = () =>
-//   useMutation(["createClassType"], async (params: any) => {
-//     return await fetcher("/api/class/create", params);
-//   });
-// export const useRemoveClassTypeMutation = () =>
-//   useMutation(["removeClassType"], async (params: any) => {
-//     return await fetcher("/api/class/remove", params);
-//   });
-// export const useCreateRegularClassMutation = () =>
-//   useMutation(["createRegularClass"], async (params: any) => {
-//     return await fetcher("/api/class/regular/create", params);
-//   });
-
-// export const useCreateRequestedClassMutation = () =>
-//   useMutation(["createRequestedClass"], async (params: any) => {
-//     return await fetcher("/api/class/requested/create", params);
-//   });
-
-// export const useUpdateRequestedClassMutation = () =>
-//   useMutation(["updateRequestedClass"], async (params: any) => {
-//     return await fetcher("/api/class/requested/update", params);
-//   });
-
-// export const useCreateUserMutation = () =>
-//   useMutation(["createUser"], async (params: any) => {
-//     return await fetcher("/api/auth/sign-up", params);
-//   });
-
-// export const useUpdateClassStatus = () =>
-//   useMutation<
-//     {
-//       status: BookingTimeSlotStatusEnum;
-//     },
-//     unknown,
-//     { status: BookingTimeSlotStatusEnum; id: string }
-//   >(["updateClassStatus"], async (params: unknown) => {
-//     return await fetcher("/api/class/requested/status-update", params);
-//   });
-
-// export const useRegularClassQuery = () =>
-//   useQuery<{
-//     regularBookingTimeSlots: (RegularBookingTimeSlots & {
-//       coach: {
-//         username: string;
-//       };
-//     })[];
-//   }>(["regularClass"], async () => {
-//     return await fetcher("/api/class/regular/fetch");
-//   });
-
-// export const useRemoveRegularClassMutation = () =>
-//   useMutation(["removeRegularClass"], async (params: any) => {
-//     return await fetcher("/api/class/regular/remove", params);
-//   });
-
-// export const useClassTypeQuery = () =>
-//   useQuery<{ classTypes: ClassesType[] }>(["classTypes"], async () => {
-//     return await fetcher("/api/class/fetch");
-//   });
-
-// export const useBookingTimeSlotQuery = ({ ids = [] }: { ids?: string[] }) =>
-//   useQuery<{ bookingTimeSlots: BookingTimeSlots[] }>(
-//     ["bookingTimeSlot", ids],
-//     async () => {
-//       return await fetcher("/api/booking-time-slot/fetch", {
-//         ids,
-//       });
-//     }
-//   );
-
-// export const useBookingTimeSlotForStudentQuery = (variable?: unknown) =>
-//   useQuery<{
-//     totalClassesCount: number;
-//     regularBookingSlot: (RegularBookingTimeSlots & {
-//       coach: {
-//         username: string;
-//       };
-//     })[];
-//     bookingTimeSlots: BookingTimeSlots[];
-//   }>(["bookingTimeSlot", variable], async () => {
-//     return await fetcher("/api/booking-time-slot/fetch-for-student", variable);
-//   });
-
-// export const useNewsQuery = () =>
-//   useQuery<{ news: News[] }>(["news"], async () => {
-//     return await fetcher("/api/news/fetch");
-//   });
-
-// export const useUsersQuery = (admin = false, variable?: unknown) =>
-//   useQuery<{
-//     users: UserType[];
-//     totalUsersCount: number;
-//   }>(["users", variable], async () => {
-//     return await fetcher(
-//       `/api/users/fetch${admin ? "?admin=true" : ""}`,
-//       variable
-//     );
-//   });
-
-// export const useAddLessonMutation = () =>
-//   useMutation(["addLesson"], async (params: any) => {
-//     return await fetcher("/api/lesson/add", params);
-//   });
-
-// export const useRemoveLessonMutation = (
-//   options?: UseMutationReactQueryOption
-// ) =>
-//   useMutation(
-//     ["removeLesson"],
-//     async (params: any) => {
-//       return await fetcher("/api/lesson/remove", params);
-//     },
-//     options
-//   );
-
-// export const useJoinClassMutation = (options?: UseMutationReactQueryOption) =>
-//   useMutation(
-//     ["joinClass"],
-//     async (params: any) => {
-//       return await fetcher("/api/class/requested/join", params);
-//     },
-//     options
-//   );
-
-// export const useJoinRegularClassMutation = (
-//   options?: UseMutationReactQueryOption
-// ) =>
-//   useMutation(
-//     ["joinRegularClass"],
-//     async (params: any) => {
-//       return await fetcher("/api/class/regular/join", params);
-//     },
-//     options
-//   );
-
-// export const useLeaveClassMutation = (options?: UseMutationReactQueryOption) =>
-//   useMutation(
-//     ["leaveClass"],
-//     async (params: any) => {
-//       return await fetcher("/api/class/requested/leave", params);
-//     },
-//     options
-//   );
-
-// export const useLessonsQuery = (options?: UseReactQueryOption) =>
-//   useQuery<{
-//     lessons: Lessons[];
-//   }>(
-//     ["lessons"],
-//     async () => {
-//       return await fetcher("/api/lesson/fetch");
-//     },
-//     options
-//   );

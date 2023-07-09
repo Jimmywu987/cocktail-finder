@@ -1,14 +1,15 @@
 import { useFetchDrinkQuery } from "apis/api";
 import { DrinkInfo } from "components/drinkDetails/DrinkInfo";
 import { useEffect, useMemo } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { Card, Grid, Image, Item, Table } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Grid, Image, Table } from "semantic-ui-react";
+
+import { DrinkDetailSkeleton } from "components/drinkDetails/DrinkDetailSkeleton";
 import {
   selectedDrinkSelector,
   updateSelectedDrink,
 } from "redux/selectedDrink";
-import Skeleton from "react-loading-skeleton";
 
 const TOTAL_INGREDIENT_NUM = 15;
 
@@ -71,6 +72,9 @@ export const DrinkDetail = () => {
         Something went wrong, please try again later
       </div>
     );
+  }
+  if (isLoading) {
+    return <DrinkDetailSkeleton />;
   }
 
   return (

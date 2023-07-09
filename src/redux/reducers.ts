@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-import { selectedDrinkReducer } from "./selectedDrink";
+import { selectedDrinkReducer } from "redux/selectedDrink";
 
 /**
  * Combine reducers
