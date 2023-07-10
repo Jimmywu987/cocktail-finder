@@ -11,7 +11,7 @@ type MobileSidebarProps = {
 export const MobileSidebar = ({ isOpen, toggleDrawer }: MobileSidebarProps) => {
   return (
     <Drawer open={isOpen} onClose={toggleDrawer} direction="right">
-      <div className="sidebar">
+      <div className="mobile-sidebar">
         <ToggleDarkModeButton />
         {/* Can add more links here as the website expends*/}
       </div>
