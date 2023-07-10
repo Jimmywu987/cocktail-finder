@@ -101,7 +101,7 @@
 .search-pop-up,
 .drop-down-menu {
   -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: 3px; /* Firefox */
+  scrollbar-width: 5px !important; /* Firefox */
 }
 
 .modal-header {
