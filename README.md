@@ -36,6 +36,7 @@ The reasons I used drop down menu for alphabet options display
 
 -------------------
 A drink detail page is added for a more complete display, not only for description, but the ingredients as well as the measures.
+
 <img width="300" alt="Bildschirmfoto 2023-07-10 um 2 50 14 AM" src="https://github.com/Jimmywu987/cocktail-finder/assets/65562227/2b627338-08d2-4ac8-9729-04e76604da8d">
 
 ## Used tech stacks 
