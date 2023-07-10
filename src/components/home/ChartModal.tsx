@@ -14,6 +14,7 @@ export const ChartModal = ({ data }: Pick<FetchDrinkResultProps, "data">) => {
       open={open}
       trigger={
         <Button
+          size="tiny"
           icon
           labelPosition="left"
           className="chart-button"
