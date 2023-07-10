@@ -16,6 +16,7 @@ type UseReactQueryOption = Omit<
   UseQueryOptions<any, unknown, any>,
   "queryKey" | "queryFn"
 >;
+
 export const useFetchDrinkQuery = (
   variable: string,
   options?: UseReactQueryOption
