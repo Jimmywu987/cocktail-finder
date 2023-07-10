@@ -13,7 +13,7 @@ export const MobileSidebar = ({ isOpen, toggleDrawer }: MobileSidebarProps) => {
     <Drawer open={isOpen} onClose={toggleDrawer} direction="right">
       <div className="sidebar">
         <ToggleDarkModeButton />
-        {/* Can add more links */}
+        {/* Can add more links here as the website expends*/}
       </div>
     </Drawer>
   );

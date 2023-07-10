@@ -12,6 +12,7 @@ export const Navbar = ({ toggleDrawer }: NavbarProps) => {
       <NavLink to="/">Cocktail Finder</NavLink>
       <div className="nav-items">
         <ToggleDarkModeButton />
+        {/* Can add more links here as the website expends*/}
       </div>
       <Icon name="sidebar" onClick={toggleDrawer} className="hamburger" />
     </nav>

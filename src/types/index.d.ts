@@ -28,3 +28,13 @@ export type DrinkProps = {
 export type ChartProps = {
   data: string[];
 };
+
+export type QueryProps = {
+  searchAlphabet: string;
+  searchInput: string;
+  searchBy: string;
+};
+
+export type QueryStateType<T> = {
+  queryState: [T, Dispatch<React.SetStateAction<T>>];
+};
