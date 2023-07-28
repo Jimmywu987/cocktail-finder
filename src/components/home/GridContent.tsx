@@ -17,7 +17,7 @@ export const GridContent = ({ fetchDrinkResult }: GridContentProps) => {
     return <div className="fetch-data-error-text">Something went wrong</div>;
   }
   if (!data?.drinks) {
-    return <div className="no-found-text">Not drink is found</div>;
+    return <div className="no-found-text">No drink is found</div>;
   }
   return (
     <>
