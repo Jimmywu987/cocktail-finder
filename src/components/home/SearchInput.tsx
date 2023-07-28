@@ -53,7 +53,7 @@ export const SearchInput = ({
                   </NavLink>
                 ))
               ) : (
-                <div className="no-found-text">Not drink is found</div>
+                <div className="no-found-text">No drink is found</div>
               )}
             </div>
           )}
